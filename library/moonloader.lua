@@ -33,7 +33,7 @@
 ---@class LuaThread # экземпляр класса LuaThread
 ---@field dead boolean # Определяет статус завершённости потока. Только для чтения.
 ---@field work_in_pause boolean # Определяет исполнение потока во время паузы игры.
----@field run fun(...) # Выполняет замороженный, выполняющийся или завершённый поток с начала. Все параметры вызова передаются в функцию потока в качестве аргументов.
+---@field run fun(...: any) # Выполняет замороженный, выполняющийся или завершённый поток с начала. Все параметры вызова передаются в функцию потока в качестве аргументов.
 ---@field terminate fun() # Принудительно завершает поток.
 ---@field status fun(): LuaThreadStatus # Возвращает статус потока.
 
@@ -47,7 +47,7 @@ lua_thread = {}
 ---
 --- <b><a href="https://wiki.blast.hk/moonloader/lua/lua_thread/create">Open the wiki</a></b><br/>
 ---
----@param func function функция потока, которая начнёт исполнение сразу после создания потока
+---@param func fun(...: any) функция потока, которая начнёт исполнение сразу после создания потока
 ---@param ... any параметры, с которыми будет вызвана функция
 ---@return LuaThread thread экземпляр `LuaThread`
 function lua_thread.create(func, ...) end
@@ -8671,7 +8671,7 @@ end
 ---
 ---@param ped Ped
 ---@param car Vehicle
-function explodeCarInCutscene(car) end
+function taskDestroyCar(ped, car) end
 
 ---
 --- <b><a href="https://wiki.blast.hk/moonloader/lua/taskDiveAndGetUp">Open the wiki</a></b>
