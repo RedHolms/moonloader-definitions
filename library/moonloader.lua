@@ -14679,10 +14679,12 @@ function sampGetPlayerArmor(id) end
 function sampSetGamestate(gamestate) end
 
 ---
---- <b><a href="https://wiki.blast.hk/moonloader/lua/sampDisconnectWithReason">Open the wiki</a></b>
+--- Отключение от текущего сервера.
 ---
----@param timeout boolean
-function sampDisconnectWithReason(timeout) end
+--- <b><a href="https://wiki.blast.hk/moonloader/lua/sampDisconnectWithReason">Open the wiki</a></b><br/>
+---
+---@param reason number Причина для отключения
+function sampDisconnectWithReason(reason) end
 
 ---
 --- Устанавливает локальному игроку новый ник.<br/>
